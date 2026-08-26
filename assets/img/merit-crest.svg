@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 254" width="260" height="254" role="img" aria-label="Merit Education Group crest">
+  <defs>
+    <!-- ===================== NAVY GRADIENTS ===================== -->
+    <linearGradient id="gNavyBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#3C5E9C"/>
+      <stop offset="0.30" stop-color="#274A85"/>
+      <stop offset="0.62" stop-color="#16315F"/>
+      <stop offset="1"   stop-color="#0B1B40"/>
+    </linearGradient>
+    <linearGradient id="gNavyLight" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#4E70AE"/>
+      <stop offset="0.55" stop-color="#2C4C88"/>
+      <stop offset="1"   stop-color="#1B3767"/>
+    </linearGradient>
+    <linearGradient id="gNavyMid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#274A85"/>
+      <stop offset="1"   stop-color="#122A56"/>
+    </linearGradient>
+    <linearGradient id="gNavyDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#152E5A"/>
+      <stop offset="1"   stop-color="#081531"/>
+    </linearGradient>
+    <linearGradient id="gNavyDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#0F2249"/>
+      <stop offset="1"   stop-color="#070F28"/>
+    </linearGradient>
+
+    <!-- ===================== BOOK NAVY ===================== -->
+    <linearGradient id="gBookNavy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#2A4680"/>
+      <stop offset="0.45" stop-color="#16315F"/>
+      <stop offset="1"   stop-color="#0A1A3E"/>
+    </linearGradient>
+    <linearGradient id="gBookNavyDeep" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#1C3A6E"/>
+      <stop offset="1"   stop-color="#081430"/>
+    </linearGradient>
+
+    <!-- ===================== GOLD GRADIENTS ===================== -->
+    <linearGradient id="gGoldArch" x1="0" y1="0" x2="1" y2="0.35">
+      <stop offset="0"   stop-color="#F5E7B4"/>
+      <stop offset="0.22" stop-color="#E6CB79"/>
+      <stop offset="0.55" stop-color="#C89A3E"/>
+      <stop offset="0.82" stop-color="#9C7526"/>
+      <stop offset="1"   stop-color="#6E4F14"/>
+    </linearGradient>
+    <linearGradient id="gGoldArchRim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#FBF3D2"/>
+      <stop offset="0.5" stop-color="#EAD189"/>
+      <stop offset="1"   stop-color="#C99A3E"/>
+    </linearGradient>
+    <linearGradient id="gGoldChev" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0"   stop-color="#F1DE9E"/>
+      <stop offset="0.5" stop-color="#C89A3E"/>
+      <stop offset="1"   stop-color="#7C5A18"/>
+    </linearGradient>
+    <linearGradient id="gBookGold" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0"   stop-color="#F3E3AC"/>
+      <stop offset="0.4" stop-color="#D6AC54"/>
+      <stop offset="1"   stop-color="#8A631C"/>
+    </linearGradient>
+
+    <!-- ===================== SHADOW FILTER ===================== -->
+    <filter id="dropShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.2" result="blur"/>
+      <feOffset in="blur" dx="1.6" dy="3.2" result="off"/>
+      <feFlood flood-color="#1A2338" flood-opacity="0.38" result="col"/>
+      <feComposite in="col" in2="off" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softInner" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.1"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#dropShadow)">
+
+    <!-- =========================================================
+         SUN RAYS  (behind the arch)
+         ========================================================= -->
+    <!-- pale / cream rays (shorter, set behind) -->
+    <g>
+      <!-- PALE LIGHT facets -->
+      <g fill="#F7F0D8">
+        <path d="M 167.8 80.5 L 194.2 71.1 L 168.5 82.3 Z"/>
+        <path d="M 159.7 69.2 L 181.6 51.7 L 161.0 70.6 Z"/>
+        <path d="M 148.4 61.2 L 163.4 37.5 L 150.0 62.1 Z"/>
+        <path d="M 135.1 57.3 L 141.6 30.0 L 136.9 57.6 Z"/>
+        <path d="M 121.2 57.9 L 118.4 30.0 L 123.1 57.6 Z"/>
+        <path d="M 108.3 63.0 L 96.6 37.5 L 110.0 62.1 Z"/>
+        <path d="M 97.8 72.0 L 78.4 51.7 L 99.0 70.6 Z"/>
+        <path d="M 90.7 84.0 L 65.8 71.1 L 91.5 82.3 Z"/>
+      </g>
+      <!-- PALE DARK facets -->
+      <g fill="#E4D3A2">
+        <path d="M 168.5 82.3 L 194.2 71.1 L 169.3 84.0 Z"/>
+        <path d="M 161.0 70.6 L 181.6 51.7 L 162.2 72.0 Z"/>
+        <path d="M 150.0 62.1 L 163.4 37.5 L 151.7 63.0 Z"/>
+        <path d="M 136.9 57.6 L 141.6 30.0 L 138.8 57.9 Z"/>
+        <path d="M 123.1 57.6 L 118.4 30.0 L 124.9 57.3 Z"/>
+        <path d="M 110.0 62.1 L 96.6 37.5 L 111.6 61.2 Z"/>
+        <path d="M 99.0 70.6 L 78.4 51.7 L 100.3 69.2 Z"/>
+        <path d="M 91.5 82.3 L 65.8 71.1 L 92.2 80.5 Z"/>
+      </g>
+    </g>
+
+    <!-- gold rays (long, in front of pale) -->
+    <g>
+      <!-- GOLD LIGHT facets -->
+      <g fill="#E9CE7C">
+        <path d="M 168.6 86.6 L 213.4 78.2 L 169.3 89.2 Z"/>
+        <path d="M 162.5 74.7 L 202.1 52.2 L 164.0 76.9 Z"/>
+        <path d="M 152.8 65.4 L 182.9 31.2 L 154.9 67.1 Z"/>
+        <path d="M 140.6 59.8 L 158.0 17.7 L 143.2 60.7 Z"/>
+        <path d="M 127.3 58.5 L 130.0 13.0 L 130.0 58.5 Z"/>
+        <path d="M 114.3 61.6 L 102.0 17.7 L 116.8 60.7 Z"/>
+        <path d="M 102.9 68.7 L 77.1 31.2 L 105.1 67.1 Z"/>
+        <path d="M 94.6 79.2 L 57.9 52.2 L 96.0 76.9 Z"/>
+        <path d="M 90.0 91.8 L 46.6 78.2 L 90.7 89.2 Z"/>
+      </g>
+      <!-- GOLD DARK facets -->
+      <g fill="#B0842B">
+        <path d="M 169.3 89.2 L 213.4 78.2 L 170.0 91.8 Z"/>
+        <path d="M 164.0 76.9 L 202.1 52.2 L 165.4 79.2 Z"/>
+        <path d="M 154.9 67.1 L 182.9 31.2 L 157.1 68.7 Z"/>
+        <path d="M 143.2 60.7 L 158.0 17.7 L 145.7 61.6 Z"/>
+        <path d="M 130.0 58.5 L 130.0 13.0 L 132.7 58.5 Z"/>
+        <path d="M 116.8 60.7 L 102.0 17.7 L 119.4 59.8 Z"/>
+        <path d="M 105.1 67.1 L 77.1 31.2 L 107.2 65.4 Z"/>
+        <path d="M 96.0 76.9 L 57.9 52.2 L 97.5 74.7 Z"/>
+        <path d="M 90.7 89.2 L 46.6 78.2 L 91.4 86.6 Z"/>
+      </g>
+    </g>
+
+    <!-- =========================================================
+         ARCH  (golden dome / rising-sun band)
+         ========================================================= -->
+    <path d="M 88.0 99.0 A 42 42 0 0 1 172.0 99.0 L 160.0 99.0 A 30 30 0 0 0 100.0 99.0 Z"
+          fill="url(#gGoldArch)"/>
+    <!-- bright top rim highlight -->
+    <path d="M 90.5 99.0 A 39.5 39.5 0 0 1 169.5 99.0" fill="none"
+          stroke="url(#gGoldArchRim)" stroke-width="2.4" stroke-linecap="round"/>
+    <!-- inner groove shadow -->
+    <path d="M 100.0 99.0 A 30 30 0 0 1 160.0 99.0" fill="none"
+          stroke="#6E4F14" stroke-width="1.4" opacity="0.7"/>
+
+    <!-- =========================================================
+         OPEN BOOK  (base) — drawn before the M so legs sit on top
+         ========================================================= -->
+    <g fill="none" stroke-linecap="butt">
+      <!-- bottom pages (L3 / R3) -->
+      <path d="M 128 224 Q 74 218 22 202" stroke="url(#gBookNavy)" stroke-width="10.5"/>
+      <path d="M 132 224 Q 186 218 238 202" stroke="url(#gBookNavy)" stroke-width="10.5"/>
+      <path d="M 128 219.8 Q 74 213.8 22 197.8" stroke="#DFE7F3" stroke-width="1.7" opacity="0.85"/>
+      <path d="M 132 219.8 Q 186 213.8 238 197.8" stroke="#DFE7F3" stroke-width="1.7" opacity="0.85"/>
+      <!-- middle pages (L2 / R2) -->
+      <path d="M 127 210 Q 78 202 32 185" stroke="url(#gBookNavy)" stroke-width="9"/>
+      <path d="M 133 210 Q 182 202 228 185" stroke="url(#gBookNavy)" stroke-width="9"/>
+      <path d="M 127 206.4 Q 78 198.4 32 181.4" stroke="#E6ECF6" stroke-width="1.7" opacity="0.9"/>
+      <path d="M 133 206.4 Q 182 198.4 228 181.4" stroke="#E6ECF6" stroke-width="1.7" opacity="0.9"/>
+      <!-- top pages (L1 navy / R1 GOLD) -->
+      <path d="M 127 197 Q 84 189 48 173" stroke="url(#gBookNavy)" stroke-width="8"/>
+      <path d="M 133 197 Q 176 189 212 173" stroke="url(#gBookGold)" stroke-width="8"/>
+      <path d="M 127 193.8 Q 84 185.8 48 169.8" stroke="#ECF0F8" stroke-width="1.6" opacity="0.9"/>
+      <path d="M 133 193.8 Q 176 185.8 212 169.8" stroke="#F7EFD2" stroke-width="1.6" opacity="0.9"/>
+
+      <!-- inner fanned pages (soft light) -->
+      <path d="M 123 199 Q 116 214 129 228 L 131 228 Q 145 214 137 199 Z" fill="#E9EEF7" stroke="none" opacity="0.35"/>
+      <!-- central binding -->
+      <path d="M 126 197 L 134 197 L 131 228 L 130 230 L 129 228 Z" fill="url(#gNavyDeep)" stroke="none"/>
+      <path d="M 130 199 L 130 229" stroke="#0A1430" stroke-width="0.9" opacity="0.5"/>
+    </g>
+
+    <!-- =========================================================
+         THE  "M"  LETTERFORM  (center)
+         ========================================================= -->
+    <g>
+      <!-- base body -->
+      <path d="M 71 101 L 91 101 L 130 142 L 169 101 L 189 101 L 189 172 L 169 172 L 169 133 L 130 167 L 91 133 L 91 172 L 71 172 Z"
+            fill="url(#gNavyBody)"/>
+
+      <!-- ===== facets ===== -->
+      <!-- right diagonal : deep shadow facet -->
+      <path d="M 130 142 L 169 101 L 169 133 L 130 167 Z" fill="url(#gNavyDark)"/>
+      <!-- left diagonal : upper-left lit facet -->
+      <path d="M 91 101 L 130 142 L 130 154 L 91 117 Z" fill="url(#gNavyLight)"/>
+      <!-- left diagonal : lower shadow facet -->
+      <path d="M 91 117 L 130 154 L 130 167 L 91 133 Z" fill="url(#gNavyMid)"/>
+
+      <!-- left leg : left lit facet / right facet -->
+      <path d="M 71 101 L 81 101 L 81 172 L 71 172 Z" fill="url(#gNavyLight)"/>
+      <path d="M 81 101 L 91 101 L 91 172 L 81 172 Z" fill="url(#gNavyMid)"/>
+      <!-- right leg : left facet (lit) / right shadow facet -->
+      <path d="M 169 101 L 179 101 L 179 172 L 169 172 Z" fill="url(#gNavyMid)"/>
+      <path d="M 179 101 L 189 101 L 189 172 L 179 172 Z" fill="url(#gNavyDark)"/>
+
+      <!-- ===== specular edge highlights ===== -->
+      <path d="M 71 101 L 74 101 L 74 170 L 71 172 Z" fill="#7E9CD2" opacity="0.85"/>
+      <path d="M 71 101 L 91 101 L 90 104 L 72 104 Z" fill="#8AA6D9" opacity="0.8"/>
+      <path d="M 169 101 L 171.5 101 L 171.5 172 L 169 172 Z" fill="#4E6EA6" opacity="0.6"/>
+      <path d="M 169 101 L 189 101 L 188 104 L 170 104 Z" fill="#6E8DC4" opacity="0.7"/>
+      <!-- diagonal top-left bevel highlight -->
+      <path d="M 91 101 L 94 101 L 130 139 L 130 143 Z" fill="#6E8DC4" opacity="0.7"/>
+      <!-- V-crotch inner bright edge -->
+      <path d="M 128 165 L 130 167 L 132 165 L 130 158 Z" fill="#4A6BAA" opacity="0.6"/>
+
+      <!-- ===== ridge lines (chisel spines) ===== -->
+      <path d="M 80.4 101 L 81.6 101 L 81.6 172 L 80.4 172 Z" fill="#0A1734" opacity="0.55"/>
+      <path d="M 178.4 101 L 179.6 101 L 179.6 172 L 178.4 172 Z" fill="#060F26" opacity="0.6"/>
+      <path d="M 91 116 L 92 118 L 130 155 L 130 153 Z" fill="#0B1C42" opacity="0.5"/>
+    </g>
+
+    <!-- =========================================================
+         GOLD  "V"  CHEVRON  (nested in the M crotch)
+         ========================================================= -->
+    <g>
+      <path d="M 105 165 L 130 174 L 155 165 L 130 195 Z" fill="url(#gGoldChev)"/>
+      <!-- left lit facet -->
+      <path d="M 105 165 L 130 174 L 130 195 Z" fill="#E4C871" opacity="0.55"/>
+      <!-- right shadow facet -->
+      <path d="M 130 174 L 155 165 L 130 195 Z" fill="#8A631C" opacity="0.5"/>
+      <!-- top bevel highlights -->
+      <path d="M 105 165 L 130 174 L 128 176 L 107 166 Z" fill="#F6E9B6" opacity="0.9"/>
+      <path d="M 155 165 L 130 174 L 132 176 L 153 166 Z" fill="#E8D089" opacity="0.7"/>
+      <!-- central ridge -->
+      <path d="M 129.3 174 L 130.7 174 L 130 195 Z" fill="#6E4F14" opacity="0.7"/>
+    </g>
+
+  </g>
+</svg>

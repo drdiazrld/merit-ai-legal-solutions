@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing &amp; Accuracy — Merit AI Legal Solutions</title>
+<meta name="description" content="Merit AI Legal Solutions — the AI Legal Associate for Minnesota. Citation-verified research, drafting, and court operations, under attorney review.">
+<link rel="icon" href="assets/img/merit-crest.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="container nav-row">
+    <a class="brand" href="index.html">
+      <img src="assets/img/merit-crest.svg" alt="Merit crest" class="brand-crest">
+      <span>MERIT AI LEGAL SOLUTIONS</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="capabilities.html" >Capabilities</a>
+      <a href="orchestration.html" >Orchestration</a>
+      <a href="vs-general-ai.html" >vs&nbsp;General&nbsp;AI</a>
+      <a href="vs-legal-ai.html" >vs&nbsp;Legal&nbsp;AI</a>
+      <a href="proof.html" >Proof</a>
+      <a href="testing.html" class="active">Testing</a>
+      <a href="security.html" >Security</a>
+      <a href="compliance.html" >Compliance</a>
+      <a href="pilot.html" class="nav-cta">Schedule a call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Testing &amp; Accuracy</span>
+      <h1>The most accurate AI — confidence in the data and the workflow it provides.</h1>
+      <p class="lead">Not "never wrong" — no one can promise that honestly. Instead: a hard gate, real tests, and an attorney in the loop. Here is exactly how we test.</p>
+    </div>
+  </section>
+
+  <!-- THREE LAYERS -->
+  <section class="section">
+    <div class="container">
+      <div class="photo strip space-top">
+        <img src="assets/img/library.jpg" alt="A law library with tall wooden shelves">
+        <span class="cap">The 357-authority Minnesota index</span>
+      </div>
+      <div class="section-head">
+        <span class="eyebrow">How every answer is tested</span>
+        <h2>Three layers of testing</h2>
+      </div>
+      <div class="card-grid three">
+        <div class="card"><h3>Real sources only</h3><p>The agent works from official Minnesota statutes and court rules and public case records — a 357-authority index. Nothing is written from memory.</p></div>
+        <div class="card"><h3>Live verification</h3><p>Every citation is re-fetched at verification time. A citation is good because it was just checked — not because it looks right.</p></div>
+        <div class="card"><h3>A gate, not a hope</h3><p>Every citation receives one of three verdicts — VERIFIED, NOT_RETRIEVABLE, or AMBIGUOUS — and only VERIFIED ships in a draft.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTI-FABRICATION -->
+  <section class="section alt">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">The anti-fabrication test</span>
+        <h2>We test the failure that matters most</h2>
+        <p>The failure attorneys fear most is the invented citation — a case that doesn't exist, cited with total confidence. So we test exactly that.</p>
+        <p>Our test set inserts fabricated cases and statutes into real requests. The agent must refuse them, flag them, and keep them out of the draft.</p>
+        <ul class="tick">
+          <li>A fabricated case in the test set was returned <b>NOT_RETRIEVABLE</b> and excluded from the draft</li>
+          <li>A real Minnesota statute in the same test verified live</li>
+          <li>Every drafting run in the suites ends with <b>SUBMIT: None</b> — nothing self-submits</li>
+        </ul>
+      </div>
+      <div class="verdict-panel">
+        <div class="verdict-row ok"><span class="v-tag">VERIFIED</span><span class="v-desc">Real statute — verified live against official sources</span></div>
+        <div class="verdict-row bad"><span class="v-tag">NOT_RETRIEVABLE</span><span class="v-desc">Fabricated case — refused and excluded from the draft</span></div>
+        <div class="verdict-row amb"><span class="v-tag">AMBIGUOUS</span><span class="v-desc">Two real cases share a page cite — flagged for you to choose the controlling one</span></div>
+        <div class="verdict-foot">Result: 5 of 5 fabricated citations refused</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGRESSION SUITES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Regression suites</span>
+        <h2>Passing is the price of entry</h2>
+        <p class="lead">Every change re-runs every suite before it ships. A one-time demo result would be worthless; these are maintained, repeatable tests.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead><tr><th>Suite</th><th>Scope</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td class="rowlabel">Core suite</td><td>The generic agent core — research, drafting, citation gate, orchestration</td><td>169 / 169</td></tr>
+            <tr><td class="rowlabel">Litigation master</td><td>Minnesota litigation playbook — 7 litigation kinds, filings, deadlines</td><td>118 / 118</td></tr>
+            <tr><td class="rowlabel">Phase six</td><td>Full workflow suite</td><td>46 / 46</td></tr>
+            <tr><td class="rowlabel">Work product 1</td><td>Drafting quality, first set</td><td>8 / 8</td></tr>
+            <tr><td class="rowlabel">Work product 2</td><td>Drafting quality, second set</td><td>10 / 10</td></tr>
+            <tr><td class="rowlabel">Work product 3</td><td>Drafting quality, third set</td><td>11 / 11</td></tr>
+            <tr><td class="rowlabel">Work product 4</td><td>Drafting quality, fourth set</td><td>12 / 12</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">A "pass" means the output met its acceptance criteria — right authorities, correct verdicts, no fabricated content, no self-submission.</p>
+    </div>
+  </section>
+
+  <!-- WHAT WE WON'T CLAIM -->
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Honesty</span>
+        <h2>What we won't claim</h2>
+      </div>
+      <div class="callout big">
+        <ul class="tick">
+          <li>We won't claim <b>"never."</b> Anyone who promises you an AI that can't make a mistake is selling something.</li>
+          <li>We won't dress up an unverified citation. If it can't be verified, it's flagged or refused — that's the design, not an accident.</li>
+          <li>When two real cases share the same citation page, the gate says <b>AMBIGUOUS</b> and asks you to choose the controlling one. It doesn't guess for you.</li>
+          <li>When a question falls outside our index, it says <b>NOT_FOUND</b>. It does not invent an answer to look helpful.</li>
+        </ul>
+        <p class="space-top"><b>What we do claim:</b> the most accurate AI for Minnesota legal work — the one that gives you confidence in the data and the workflow it provides, under your review.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center-cta">
+    <div class="container">
+      <p class="lead">Put the tested agent to work on your own matters.</p>
+      <a class="btn" href="pilot.html">Start your free pilot month</a>
+    </div>
+  </section>
+</main>
+<footer class="site-foot">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/img/merit-crest.svg" alt="Merit crest" class="brand-crest">
+          <span>MERIT AI LEGAL SOLUTIONS</span>
+        </a>
+        <p class="foot-tag">The AI Legal Associate — built for Minnesota practice. One agent, one attorney, under your review.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="capabilities.html">Capabilities</a>
+        <a href="orchestration.html">Orchestration</a>
+        <a href="vs-general-ai.html">vs General AI</a>
+        <a href="vs-legal-ai.html">vs Legal AI</a>
+        <a href="proof.html">Proof</a>
+        <a href="testing.html">Testing &amp; Accuracy</a>
+        <a href="security.html">Security</a>
+        <a href="compliance.html">Compliance</a>
+        <a href="pilot.html">Schedule a call</a>
+      </nav>
+    </div>
+    <div class="foot-legal">
+      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3 · Ready for Minnesota SF 4927 · The attorney reviews and approves every output — the attorney is the author.
+      <span class="copy">Merit AI Legal Solutions · Minnesota</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
