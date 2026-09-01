@@ -36,13 +36,104 @@
   <section class="page-head">
     <div class="container">
       <span class="eyebrow">vs General AI</span>
-      <h1>General-purpose AI is brilliant. It's not built for your practice.</h1>
-      <p class="lead">General chatbots are remarkable tools. But legal work demands something narrower and more disciplined. Here's the difference, honestly stated.</p>
+      <h1>Commands, not prompts.</h1>
+      <p class="lead">Tell it what to do. It does the work.</p>
+      <p class="lead">A general-purpose AI chatbot waits for you to manage it. The Associate takes plain-English commands, one at a time — and each one starts a deterministic, multi-step workflow: pull the matter, route the work, draft with verified citations, mark it ready for your review. No re-prompting. No project-managing. No re-pasting the case into a fresh session.</p>
     </div>
   </section>
 
+  <!-- 1. COMMANDS -->
   <section class="section">
     <div class="container">
+      <span class="eyebrow">The commands</span>
+      <h2>Say it like you'd say it to a paralegal</h2>
+      <p class="lead">One plain-English command at a time. The same command does the same work every time — that's the point of a command.</p>
+
+      <h3 class="space-top">The briefs work</h3>
+      <ul class="cmd-list">
+        <li class="cmd-item"><code>"Draft a memo for the case"</code><span class="cmd-what">Writes the memo from the matter record — parties, facts, issues, evidence, your style.</span></li>
+        <li class="cmd-item"><code>"Draft a demand letter"</code><span class="cmd-what">The letter, in litigation format, with citations that were re-verified, not recalled.</span></li>
+        <li class="cmd-item"><code>"Draft a motion"</code><span class="cmd-what">The motion, the notice, and the supporting authorities — one command.</span></li>
+        <li class="cmd-item"><code>"Prepare me for tomorrow's deposition"</code><span class="cmd-what">Decomposes into parallel workstreams — facts, research, evidence, weaknesses, opposing position, tasks, questions — and merges them into one prep brief.</span></li>
+      </ul>
+
+      <h3 class="space-top">The matter work</h3>
+      <ul class="cmd-list">
+        <li class="cmd-item"><code>"New matter: Johnson v. Smith — rear-end collision, 2026-03-14"</code><span class="cmd-what">Builds the matter record: parties, facts, chronology, issues, evidence, weaknesses, opposing position, next actions.</span></li>
+        <li class="cmd-item"><code>"Analyze the file /path/to/complaint.pdf"</code><span class="cmd-what">Extracts the allegations, classifies them, and logs the evidence in the matter.</span></li>
+        <li class="cmd-item"><code>"What's due?"</code> or <code>"What's due in 14 days?"</code><span class="cmd-what">Verified deadlines — business days, Minnesota holidays, the +3 mail rule — calculated from your matter's dates.</span></li>
+        <li class="cmd-item"><code>"Add a task: file the response by 2026-09-01"</code> and <code>"Mark T1 done"</code><span class="cmd-what">Tasks in the matter record, tracked until you close them.</span></li>
+        <li class="cmd-item"><code>"Is 518.17 real?"</code><span class="cmd-what">A citation check against the real Minnesota index — live, with a verdict.</span></li>
+      </ul>
+
+      <div class="callout">
+        <p>Every command runs the same pipeline: pull the matter record from the Case Brain → route to the right model tier → draft with VERIFIED-only citations → leave honest-empty fields → mark <strong>READY_FOR_ATTORNEY_REVIEW</strong>. Nothing auto-files. <strong>SUBMIT stays None</strong> until you approve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. HOW IT DIFFERS -->
+  <section class="section alt">
+    <div class="container">
+      <span class="eyebrow">How that differs</span>
+      <h2>One command is a pipeline, not a chat turn</h2>
+      <p class="lead">With a general-purpose chatbot, you are the project manager: you paste the context, restate the task, check the citations, and re-do it all next session. With the Associate, you are the reviewer. That's the whole difference.</p>
+      <div class="flow-list">
+        <div class="fbox"><span class="flow-num">1</span><div><h3>It pulls the matter itself</h3><p>Parties, facts, chronology, evidence, tasks — the living file in the Case Brain. You don't re-explain the case; you reference it.</p></div></div>
+        <div class="fbox"><span class="flow-num">2</span><div><h3>It routes the work to the right model tier</h3><p>Drafting, analysis, deadline math — each step runs on the tier built for it, with citations checked against the 357-authority Minnesota index and live refetches. Three verdicts, never invented: VERIFIED, NOT_RETRIEVABLE, AMBIGUOUS.</p></div></div>
+        <div class="fbox"><span class="flow-num">3</span><div><h3>It leaves the work honest</h3><p>Empty fields stay empty — no filler, no confident guessing. The draft comes back marked READY_FOR_ATTORNEY_REVIEW, and nothing leaves without you: SUBMIT is None until you approve.</p></div></div>
+        <div class="fbox"><span class="flow-num">4</span><div><h3>It checks its own work</h3><p>Every brief runs independent and adversarial QA passes before it reaches you — the same command, the same quality bar, every time.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROMPTS VS COMMANDS -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Prompts vs commands</span>
+      <h2>One command where the old way takes a dozen prompts</h2>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr><th style="width:26%"></th><th>With the Associate</th><th>With a general-purpose chatbot</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="rowlabel">Demand letter</td><td><strong>1 command</strong></td><td>6–10 prompts — and you rewrite the format yourself</td></tr>
+            <tr><td class="rowlabel">Deposition prep</td><td><strong>1 command</strong></td><td>8–15 prompts, each one a separate thread</td></tr>
+            <tr><td class="rowlabel">Deadline calculation</td><td><strong>1 command</strong></td><td>2–3 prompts, then you open the statute and do the calendar math yourself</td></tr>
+            <tr><td class="rowlabel">Citation check</td><td><strong>1 command</strong></td><td>2–3 prompts — and you still verify the answer yourself, because it can't</td></tr>
+            <tr><td class="rowlabel">Follow-up / reminder</td><td><strong>1 command</strong></td><td>2 prompts — and the context is gone by the next session</td></tr>
+            <tr><td class="rowlabel">One full matter brief</td><td><strong>1–3 commands</strong></td><td>15–30 prompts, re-pasted into a fresh session every time</td></tr>
+            <tr><td class="rowlabel">Determinism</td><td>Same command, same tool, same pipeline, every time</td><td>Output can vary run to run</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WHY IT'S EASIER -->
+  <section class="section alt">
+    <div class="container">
+      <span class="eyebrow">Why it's easier</span>
+      <h2>Fewer steps. Fewer decisions.</h2>
+      <div class="flow-list">
+        <div class="fbox"><span class="flow-num">1</span><div><h3>Order-of-magnitude fewer steps</h3><p>One command replaces a dozen prompts. Fewer steps means fewer decisions about how to ask, what to paste, and what to check — the decisions that drain a day.</p></div></div>
+        <div class="fbox"><span class="flow-num">2</span><div><h3>You approve instead of verifying</h3><p>The citation guard removes the biggest malpractice exposure from the workflow: the draft arrives already checked, with a verdict on every authority. You review the work; you don't re-verify the law.</p></div></div>
+        <div class="fbox"><span class="flow-num">3</span><div><h3>It remembers the case</h3><p>Per-attorney matter records, evidence logs, task lists, and your style — learned under your review. No session starts from zero.</p></div></div>
+        <div class="fbox"><span class="flow-num">4</span><div><h3>Built on the ethics rules</h3><p>Rule 1.1, 1.6, 3.3, and 5.3 are the architecture: attorney-review gates, per-attorney isolation, and an audit trail on everything. No compliance briefing required.</p></div></div>
+        <div class="fbox"><span class="flow-num">5</span><div><h3>It says no, honestly</h3><p>Off-topic, non-Minnesota, or unverifiable? It declines instead of guessing confidently. You never wonder whether a clean answer is a real answer.</p></div></div>
+      </div>
+      <div class="callout">
+        <p>It's discipline: verification, refusal, organization — and your review on every deliverable. That's the whole difference, and it's the only one that matters for legal work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. EVIDENCE: THE FULL COMPARISON -->
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">The full comparison</span>
+      <h2>Side by side</h2>
       <div class="table-wrap">
         <table class="compare">
           <thead>
@@ -61,9 +152,6 @@
             <tr><td class="rowlabel">Privacy</td><td>Per-attorney isolation; only task-relevant content per step; no training on your files</td><td>Not built for client confidentiality</td></tr>
           </tbody>
         </table>
-      </div>
-      <div class="callout">
-        <p>It isn't "smarter vs. dumber." It's discipline: a specialist that verifies, refuses, and organizes — versus a generalist that answers. For legal work, we'd rather have the specialist under your review.</p>
       </div>
     </div>
   </section>
