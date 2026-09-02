@@ -125,5 +125,29 @@
   </div>
 </footer>
 
+<script>
+  // Founding-seats countdown (A5). One source of truth: FOUNDING_SIGNED.
+  // When a founding attorney signs (pilot locked in), bump FOUNDING_SIGNED here;
+  // the count renders from this constant — there is no second number to edit.
+  (function () {
+    var TOTAL = 10;
+    var SIGNED = 0;
+    function renderCount() {
+      var left = Math.max(0, TOTAL - SIGNED);
+      var num = document.getElementById("founding-count");
+      if (num) num.textContent = String(left);
+      if (left === 0 && SIGNED > 0) {
+        var label = document.querySelector(".countdown .cd-label");
+        if (label) label.textContent = "Founding seats full";
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", renderCount);
+    } else {
+      renderCount();
+    }
+  })();
+</script>
+
 </body>
 </html>
