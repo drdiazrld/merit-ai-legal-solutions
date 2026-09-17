@@ -39,9 +39,9 @@ __TITLE__ Merit AI Solutions: The AI Legal Associate for Minnesota
 <!-- ================= STATS ================= -->
   <section class="stats">
     <div class="container stats-grid">
-      <div class="stat"><span class="num">253/253</span><span class="lbl">Core test suite passing</span></div>
-      <div class="stat"><span class="num">275/275</span><span class="lbl">Litigation master suite passing</span></div>
-      <div class="stat"><span class="num">5/5</span><span class="lbl">Fabricated citations refused by the gate</span></div>
+      <div class="stat"><span class="num">24/7</span><span class="lbl">Support specialists on call, at any hour</span></div>
+      <div class="stat"><span class="num">One</span><span class="lbl">Agent, one attorney. Your files stay under your own key.</span></div>
+      <div class="stat"><span class="num">None</span><span class="lbl">Fabricated citations shipped: the gate refuses them</span></div>
       <div class="stat"><span class="num">635</span><span class="lbl">Minnesota and federal authorities indexed: statutes, court rules, and real cases</span></div>
     </div>
   </section>
@@ -102,11 +102,11 @@ __TITLE__ Merit AI Solutions: The AI Legal Associate for Minnesota
             <input type="range" id="rate" min="150" max="600" value="300" step="10">
             <div class="calc-val">$<span id="rate-out">300</span>/hr</div>
           </div>
-          <p class="calc-note">Your numbers, not ours. The pilot is how you verify them.</p>
+          <p class="calc-note">Your numbers, not ours. It assumes the recovery shown in the pattern below: 8 of every 14 hours of research, drafting, and office work. The pilot is how you verify them.</p>
         </div>
         <div class="calc-results">
-          <div class="result"><span class="num" id="res-hrs">65</span><span class="lbl">hours returned every month</span></div>
-          <div class="result"><span class="num" id="res-val">$234,000</span><span class="lbl">of billable capacity a year</span></div>
+          <div class="result"><span class="num" id="res-hrs">37</span><span class="lbl">hours returned every month</span></div>
+          <div class="result"><span class="num" id="res-val">$133,200</span><span class="lbl">of billable capacity a year</span></div>
         </div>
       </div>
       <div class="week-visual">
@@ -137,7 +137,7 @@ __TITLE__ Merit AI Solutions: The AI Legal Associate for Minnesota
           </div>
         </div>
       </div>
-      <p class="week-note">A typical solo pattern, shown as ranges. Your pilot is how you measure your own.</p>
+      <p class="week-note">One typical solo week, by hand and with the Associate. Your pilot is how you measure your own.</p>
       <div class="card-grid three roi-cards">
         <div class="card"><h3>Your time, returned</h3><p>Research, drafting, cite-checking, and the office work in between, done under your review, while you do what only you can do.</p></div>
         <div class="card"><h3>Capacity is revenue</h3><p>More cases, not more hours. Every hour returned is capacity for one more client, one more motion, one more matter.</p></div>
@@ -148,10 +148,12 @@ __TITLE__ Merit AI Solutions: The AI Legal Associate for Minnesota
   <script>
     (function () {
       var hrs = document.getElementById("hrs"),
+        /* The pattern below shows 8 of every 14 research/drafting/admin hours returned. */
+        RECOVERED = 8 / 14,
         rate = document.getElementById("rate");
       function upd() {
         var h = +hrs.value, r = +rate.value;
-        var mh = Math.round(h * 4.33);
+        var mh = Math.round(h * 4.33 * RECOVERED);
         document.getElementById("hrs-out").textContent = h;
         document.getElementById("rate-out").textContent = r;
         document.getElementById("res-hrs").textContent = mh;
@@ -341,7 +343,7 @@ __TITLE__ Merit AI Solutions: The AI Legal Associate for Minnesota
     <div class="container section-head center">
       <span class="eyebrow">Compliance</span>
       <h2>Built for the Minnesota Rules</h2>
-      <p class="lead">Rules 1.1, 1.6, 3.3, and 5.3 · Ready for SF 4927 · The attorney reviews and approves every output. The attorney is the author.</p>
+      <p class="lead">Rules 1.1, 1.6, 3.3, and 5.3 · The attorney reviews and approves every output. The attorney is the author.</p>
       <p class="space-top"><a class="btn" href="compliance.html">Read the compliance page</a></p>
     </div>
   </section>

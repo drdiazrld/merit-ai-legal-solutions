@@ -1,0 +1,4 @@
+
+# never publish: internal media carrying pricing
+*.HAS_PRICING*
+*HAS_PRICING_DO_NOT_USE*

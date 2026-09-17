@@ -9,6 +9,7 @@
   --navy-ink:#131B38;
   --gold:#B08D42;
   --gold-soft:#D4B878;
+  --gold-ink:#8A6A2A;
   --gold-pale:rgba(176,141,66,.07);
   --paper:#FFFDF8;
   --paper-2:#F6F2E9;
@@ -87,7 +88,7 @@ a:hover{text-decoration:underline}
 .hero-note strong{color:var(--navy)}
 .eyebrow{
   font-size:12px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:10px;
+  color:var(--gold-ink);display:flex;align-items:center;gap:10px;
 }
 .eyebrow::before{content:"";width:24px;height:2px;background:var(--gold);flex:none}
 h1{
