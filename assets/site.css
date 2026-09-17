@@ -1,5 +1,5 @@
 /* ============================================================
-   MERIT AI LEGAL SOLUTIONS — site design system
+   MERIT AI SOLUTIONS - site design system
    Editorial legal: navy / gold / paper, serif display + clean sans
    Restraint: generous whitespace, small editorial photography
    ============================================================ */
@@ -430,3 +430,52 @@ tbody td:first-child{font-weight:600;color:var(--navy);white-space:nowrap;width:
   .cmd-item{flex-direction:column;gap:6px;align-items:flex-start}
   .cmd-item code{white-space:normal}
 }
+
+/* ============================================================
+   PREMIUM POLISH LAYER
+   Additive refinements only: no structural changes to the system.
+   ============================================================ */
+::selection{background:rgba(176,141,66,.28);color:var(--navy-ink)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+[id]{scroll-margin-top:86px}
+h1,h2,h3{text-wrap:balance;letter-spacing:-.012em}
+p,li{text-wrap:pretty}
+.stat .num,.result .num,.cd-num,table td,.compare td{font-variant-numeric:tabular-nums}
+.btn,.btn-ghost,.card,.nav a,.foot-links a,.card-link{
+  transition:transform .16s ease,box-shadow .16s ease,background .16s ease,color .16s ease,border-color .16s ease;
+}
+.btn:hover,.btn-ghost:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(19,27,56,.14)}
+.btn-ghost:hover{box-shadow:0 6px 16px rgba(19,27,56,.10)}
+.card{position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--gold);transition:width .24s ease}
+.card:hover::before{width:100%}
+.eyebrow{letter-spacing:.16em}
+.lead{line-height:1.72}
+.section-head h2 + .lead{margin-top:.45em}
+.compare tbody tr:nth-child(even),table tbody tr:nth-child(even){background:rgba(28,41,80,.022)}
+.stat .num{letter-spacing:-.02em}
+.foot-links a{position:relative}
+.foot-links a::after{content:"";position:absolute;left:0;bottom:-3px;height:1px;width:0;background:var(--gold-soft);transition:width .18s ease}
+.foot-links a:hover::after{width:100%}
+.cta-band .btn{box-shadow:0 6px 18px rgba(19,27,56,.14)}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+@media (max-width:1140px){.nav a{padding:7px 8px;font-size:12px}}
+@media print{
+  .site-head,.cta-band,.nav,.btn-row,.calc-panel,.film-frame{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  .section{padding:14pt 0}
+  .card,.panel,.table-wrap{break-inside:avoid}
+}
+
+/* ================= ASSURANCE STRIP + REVEAL ================= */
+.assure-band{padding:20px 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.assure{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:center;align-items:center}
+.assure span{position:relative;padding-left:16px;font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.assure span::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;background:var(--gold);transform:rotate(45deg)}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+@media (max-width:760px){.assure{gap:8px 18px}.assure span{font-size:11px;white-space:normal}}

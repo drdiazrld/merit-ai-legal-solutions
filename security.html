@@ -199,5 +199,22 @@
   </div>
 </footer>
 
+<script>
+/* Subtle, purposeful motion. Progressive enhancement only. */
+(function(){
+  try{
+    if(!('IntersectionObserver' in window)) return;
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var els = document.querySelectorAll('.card, .stat, .feat, .flow, .statement, .section-head, .cta-band h2');
+    if(!els.length) return;
+    for (var i=0;i<els.length;i++) els[i].classList.add('reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -6% 0px', threshold:0.08});
+    for (var j=0;j<els.length;j++) io.observe(els[j]);
+  }catch(err){}
+})();
+</script>
+
 </body>
 </html>
