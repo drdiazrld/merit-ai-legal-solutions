@@ -1,4 +1,6 @@
 __TITLE__ Security &amp; Privacy: Merit AI Solutions
+__DESC__ Merit AI Solutions: Minnesota legal research, drafting, and court operations under attorney review. Standalone citation verification is available; desk wiring is in progress.
+
 <main>
   <section class="page-head">
     <div class="container">
@@ -22,7 +24,7 @@ __TITLE__ Security &amp; Privacy: Merit AI Solutions
         <div class="card"><h3>Only what the task needs</h3><p>Each call touches only task-relevant content, not your entire file.</p></div>
         <div class="card"><h3>No training on your files</h3><p>Your content is not ingested for model training.</p></div>
         <div class="card"><h3>Nothing submits itself</h3><p>No auto-filing, no auto-sending. Every submission is you, through the courts' own portal. There's an audit log of every action the agent takes.</p></div>
-        <div class="card"><h3>The citation gate</h3><p>It refuses to invent and flags what it can't verify (5 of 5 fabricated citations refused in tests). For a lawyer, that's a security control too. It protects the record from confidently-wrong law.</p></div>
+        <div class="card"><h3>The citation gate</h3><p>On 2026-09-27 the standalone gate refused 5 of 5 fabricated citations as NOT_RETRIEVABLE. Receipt: corpus sha <code>1a3f4d22…</code>, 636 rows, 14–61 ms. The desk does not call the gate yet; ACC-01 wiring is in flight.</p></div>
       </div>
     </div>
   </section>
@@ -98,7 +100,7 @@ __TITLE__ Security &amp; Privacy: Merit AI Solutions
         <span class="eyebrow">The citation gate</span>
         <h2>A security control for the record</h2>
         <p>Confidentiality is one kind of security. Integrity is another: the failure attorneys fear most is the invented citation: a case that doesn't exist, cited with total confidence.</p>
-        <p>The gate returns one of three verdicts: <b>VERIFIED</b>, <b>NOT_RETRIEVABLE</b>, or <b>AMBIGUOUS</b>, and only VERIFIED ships in a draft. A fabricated case in our test set was refused and excluded. That's the design, tested.</p>
+        <p>The standalone gate returns <b>VERIFIED</b>, <b>NOT_RETRIEVABLE</b>, or <b>AMBIGUOUS</b>, and blocks fabricated and overbroad citations when it runs. The desk does not call it yet; ACC-01 wiring is in flight.</p>
         <p class="space-top"><a class="btn-ghost" href="testing.html">See exactly how we test →</a></p>
       </div>
       <div class="photo">

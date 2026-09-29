@@ -8,7 +8,7 @@ PAGES = ROOT / "pages"
 OUT = ROOT  # pages land in the site root
 
 DEFAULT_DESC = ("Merit AI Solutions: the AI Legal Associate for Minnesota. "
-                "Citation-verified research, drafting, and court operations, under attorney review.")
+                "Legal research, drafting, and court operations, under attorney review.")
 
 NAV_KEYS = ["CAP", "WRK", "ORC", "GAI", "LAI", "PRO", "TES", "SYS", "SEC", "COM", "PIL"]
 
@@ -21,10 +21,10 @@ def build():
         body = src.read_text()
         title = re.search(r"__TITLE__\s*(.*?)\s*$", body, re.M).group(1).strip()
         # drop the title token line from body
-        body = re.sub(r"^__TITLE__\s*.*$", "", body, flags=re.M)
+        body = re.sub(r"^__TITLE__\s*.*\n?", "", body, flags=re.M)
         dm = re.search(r"__DESC__\s*(.*?)\s*$", body, re.M)
         desc = dm.group(1).strip() if dm else DEFAULT_DESC
-        body = re.sub(r"^__DESC__\s*.*$", "", body, flags=re.M)
+        body = re.sub(r"^__DESC__\s*.*\n?", "", body, flags=re.M)
 
         nav = nav_tpl
         stem = src.stem

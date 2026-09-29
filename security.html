@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Security &amp; Privacy: Merit AI Solutions</title>
-<meta name="description" content="Merit AI Solutions: the AI Legal Associate for Minnesota. Citation-verified research, drafting, and court operations, under attorney review.">
+<meta name="description" content="Merit AI Solutions: Minnesota legal research, drafting, and court operations under attorney review. Standalone citation verification is available; desk wiring is in progress.">
 <link rel="icon" href="assets/img/merit-crest.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,7 +60,7 @@
         <div class="card"><h3>Only what the task needs</h3><p>Each call touches only task-relevant content, not your entire file.</p></div>
         <div class="card"><h3>No training on your files</h3><p>Your content is not ingested for model training.</p></div>
         <div class="card"><h3>Nothing submits itself</h3><p>No auto-filing, no auto-sending. Every submission is you, through the courts' own portal. There's an audit log of every action the agent takes.</p></div>
-        <div class="card"><h3>The citation gate</h3><p>It refuses to invent and flags what it can't verify (5 of 5 fabricated citations refused in tests). For a lawyer, that's a security control too. It protects the record from confidently-wrong law.</p></div>
+        <div class="card"><h3>The citation gate</h3><p>On 2026-09-27 the standalone gate refused 5 of 5 fabricated citations as NOT_RETRIEVABLE. Receipt: corpus sha <code>1a3f4d22…</code>, 636 rows, 14–61 ms. The desk does not call the gate yet; ACC-01 wiring is in flight.</p></div>
       </div>
     </div>
   </section>
@@ -136,7 +136,7 @@
         <span class="eyebrow">The citation gate</span>
         <h2>A security control for the record</h2>
         <p>Confidentiality is one kind of security. Integrity is another: the failure attorneys fear most is the invented citation: a case that doesn't exist, cited with total confidence.</p>
-        <p>The gate returns one of three verdicts: <b>VERIFIED</b>, <b>NOT_RETRIEVABLE</b>, or <b>AMBIGUOUS</b>, and only VERIFIED ships in a draft. A fabricated case in our test set was refused and excluded. That's the design, tested.</p>
+        <p>The standalone gate returns <b>VERIFIED</b>, <b>NOT_RETRIEVABLE</b>, or <b>AMBIGUOUS</b>, and blocks fabricated and overbroad citations when it runs. The desk does not call it yet; ACC-01 wiring is in flight.</p>
         <p class="space-top"><a class="btn-ghost" href="testing.html">See exactly how we test →</a></p>
       </div>
       <div class="photo">
@@ -196,7 +196,8 @@
       </nav>
     </div>
     <div class="foot-legal">
-      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3 · The attorney reviews and approves every output. The attorney is the author.
+      Merit AI Solutions is not a law firm and does not provide legal advice. The AI Legal Associate is a support tool used under the supervision of a licensed attorney, who reviews and approves every output and remains the author. Using this site creates no attorney-client relationship.
+      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3. The attorney reviews and approves every output. The attorney is the author.
       <span class="copy">© 2026 Merit AI Solutions · Minnesota</span>
     </div>
   </div>
