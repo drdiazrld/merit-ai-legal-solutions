@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Capabilities: Merit AI Solutions</title>
-<meta name="description" content="Merit AI Solutions: the AI Legal Associate for Minnesota. Citation-verified research, drafting, and court operations, under attorney review.">
+<meta name="description" content="Merit AI Solutions: Minnesota legal research, drafting, and court operations under attorney review. Standalone citation verification is available; desk wiring is in progress.">
 <link rel="icon" href="assets/img/merit-crest.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@
     <div class="container">
       <span class="eyebrow">Capabilities</span>
       <h1>Eight working systems. One agent.</h1>
-      <p class="lead">Every system below is live, tested, and running under attorney review. No roadmaps. This is what the AI Legal Associate does today.</p>
+      <p class="lead">The systems below describe the current build. The citation gate is implemented and tested separately; the desk does not call it yet, and that wiring remains in flight under ACC-01.</p>
     </div>
   </section>
 
@@ -49,10 +49,10 @@
       <div class="ftext">
         <span class="eyebrow">System A · Research</span>
         <h2>Full-matter research in minutes</h2>
-        <p>Research pulls statutes, court rules, and real case law from a 635-authority Minnesota and federal index: 30 statutes, 45 court rules, 560 real cases, organized around your matter's facts, not keywords. Intake completes in about 2.4 seconds, and every authority passes the citation gate before it appears in a draft.</p>
+        <p>Research pulls from a 630-authority Minnesota and federal index: 30 statutes, 45 court rules, and 555 cases. In one stage run, intake took 3.1 minutes (185 seconds) and missed a deadline; that miss is why the number is still moving. Receipt: measured 2026-09-27 on tree <code>1b6ddab</code>, n=1 stage run, attorney review time excluded.</p>
         <ul class="tick">
           <li>Statutes, rules, and real cases, organized around your facts</li>
-          <li>Intake in ~2.4 seconds</li>
+          <li>Measured intake: 3.1 minutes (185 seconds); that run missed a deadline</li>
           <li>Outside the index, it says <b>NOT_FOUND</b>. It doesn't guess</li>
         </ul>
       </div>
@@ -66,7 +66,7 @@
       <div class="ftext">
         <span class="eyebrow">System B · Citation safety</span>
         <h2>A gate that refuses to invent</h2>
-        <p>Every citation is re-verified live against primary sources and returned with one of three verdicts: <b>VERIFIED</b>, <b>NOT_RETRIEVABLE</b>, or <b>AMBIGUOUS</b>. Only VERIFIED citations ship. A fabricated case gets NOT_RETRIEVABLE and is excluded. A ten-citation batch verifies in seconds.</p>
+        <p>The standalone gate returns <b>VERIFIED</b>, <b>NOT_RETRIEVABLE</b>, or <b>AMBIGUOUS</b>. When it runs, it blocks fabricated and overbroad citations. The desk does not call the gate yet; ACC-01 wiring is in flight. A ten-citation gate batch took 21.8 seconds. Receipt: measured 2026-09-27 on tree <code>1b6ddab</code>, 10 model calls in one batch, attorney review time excluded.</p>
         <ul class="tick">
           <li>Live re-fetch at verification time, not "looks right"</li>
           <li>Three verdicts: VERIFIED · NOT_RETRIEVABLE · AMBIGUOUS</li>
@@ -83,10 +83,10 @@
       <div class="ftext">
         <span class="eyebrow">System C · Drafting</span>
         <h2>Memos, motions, and filings in minutes</h2>
-        <p>Drafting works from the record, not from memory: research memos, demand letters, motions, complaints, answers, interrogatories, and briefs, in the formats Minnesota courts expect. Every draft ships with its citation verdicts attached, so your review is fast and grounded.</p>
+        <p>Drafting works from the record, not from memory: research memos, demand letters, motions, complaints, answers, interrogatories, and briefs, in the formats Minnesota courts expect. Drafts preserve citation references for attorney review; the standalone gate can return verdicts when run separately while desk wiring remains in progress.</p>
         <ul class="tick">
           <li>Memos · demands · motions · complaints · answers · interrogatories · briefs</li>
-          <li>Citation verdicts attached to every draft</li>
+          <li>Standalone citation verdicts available when the gate is run separately</li>
           <li>Nothing submits itself. Drafts carry <b>SUBMIT: None</b></li>
         </ul>
       </div>
@@ -116,10 +116,10 @@
     <div class="container feat-grid">
       <div class="ftext">
         <span class="eyebrow">System E · Deadline engine</span>
-        <h2>Seventeen verified Minnesota deadlines</h2>
-        <p>The deadline engine computes from the Minnesota Rules of Civil Procedure: 17 verified deadlines, calculated from your matter's own dates. It answers what attorneys actually ask: what's due, when, and what happens if it's missed.</p>
+        <h2>Seventeen sourced Minnesota deadline rules</h2>
+        <p>The deadline store contains 17 rules, each with its rule number and a live Minnesota Revisor URL. That source count does not certify the calendar math: a 2026-09-27 stage run took 2.1 minutes (125 seconds) and returned 2032 instead of 2028 for Minn. Stat. § 541.07.</p>
         <ul class="tick">
-          <li>17 verified Minnesota deadlines, calculated</li>
+          <li>17 sourced rule records; calculation accuracy is not yet certified</li>
           <li>Computed from your matter's dates, not a static calendar</li>
           <li>Deadlines roll into your matter file automatically</li>
         </ul>
@@ -134,14 +134,14 @@
       <div class="ftext">
         <span class="eyebrow">System F · Court operations</span>
         <h2>The courthouse, digitized</h2>
-        <p>Court operations keeps 87 courthouse cards for Minnesota courts, covering locations, filing systems, and procedures. It prefills court forms like the CIV117 from your matter record. Filing goes through the courts' own e-filing portal: the agent prepares, the court's system files, you approve every step.</p>
+        <p>Court operations keeps 87 courthouse cards for Minnesota courts, covering locations, filing systems, and procedures. Receipt: 88 JSON files counted, comprising 87 cards plus <code>schema.json</code>. It prefills court forms like the CIV117 from your matter record. Filing goes through the courts' own e-filing portal: the agent prepares, the court's system files, you approve every step.</p>
         <ul class="tick">
-          <li>87 courthouse cards for Minnesota courts</li>
+          <li>87 courthouse cards (88 JSON files less <code>schema.json</code>)</li>
           <li>Form prefill: CIV117 and more</li>
           <li>Filing through the courts' own e-filing portal</li>
         </ul>
       </div>
-      <div class="fart"><div class="photo"><img src="assets/img/gavel-book.jpg" alt="A wooden gavel resting on a law book"><span class="cap">87 cards. One portal.</span></div></div>
+      <div class="fart"><div class="photo"><img src="assets/img/gavel-book.jpg" alt="A wooden gavel resting on a law book"><span class="cap">87 cards; 88 JSON files less schema.</span></div></div>
     </div>
   </section>
 
@@ -151,7 +151,7 @@
       <div class="ftext">
         <span class="eyebrow">System G · Orchestration</span>
         <h2>Seven tracks, one brief</h2>
-        <p>One request dispatches seven parallel workstreams: facts, research, evidence, weaknesses, opposing arguments, and open tasks. Then an adversarial QA pass tries to break the draft. What reaches you is the merged, challenged, corrected brief, in roughly 10–15 minutes before your review.</p>
+        <p>One request is designed to dispatch seven parallel workstreams: facts, research, evidence, weaknesses, opposing arguments, and open tasks, followed by adversarial QA. The prior unmeasured timing estimate has been withdrawn.</p>
         <ul class="tick">
           <li>Seven parallel tracks from a single request</li>
           <li>Adversarial QA challenges the merged draft</li>
@@ -210,7 +210,8 @@
       </nav>
     </div>
     <div class="foot-legal">
-      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3 · The attorney reviews and approves every output. The attorney is the author.
+      Merit AI Solutions is not a law firm and does not provide legal advice. The AI Legal Associate is a support tool used under the supervision of a licensed attorney, who reviews and approves every output and remains the author. Using this site creates no attorney-client relationship.
+      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3. The attorney reviews and approves every output. The attorney is the author.
       <span class="copy">© 2026 Merit AI Solutions · Minnesota</span>
     </div>
   </div>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Testing &amp; Accuracy: Merit AI Solutions</title>
-<meta name="description" content="Merit AI Solutions: the AI Legal Associate for Minnesota. Citation-verified research, drafting, and court operations, under attorney review.">
+<meta name="description" content="Merit AI Solutions: Minnesota legal research, drafting, and court operations under attorney review. Standalone citation verification is available; desk wiring is in progress.">
 <link rel="icon" href="assets/img/merit-crest.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,7 +38,7 @@
   <section class="page-head">
     <div class="container">
       <span class="eyebrow">Testing &amp; Accuracy</span>
-      <h1>The most thoroughly verified AI for Minnesota practice.</h1>
+      <h1>Minnesota research and drafting under attorney review.</h1>
       <p class="lead">Not "never wrong": no one can promise that honestly. Instead: a hard gate, real tests, and an attorney in the loop. Here is exactly how we test.</p>
     </div>
   </section>
@@ -48,16 +48,16 @@
     <div class="container">
       <div class="photo strip space-top">
         <img src="assets/img/library.jpg" alt="A law library with tall wooden shelves">
-        <span class="cap">The 635-authority Minnesota and federal index</span>
+        <span class="cap">630 distinct authorities: 30 statutes + 45 rules + 555 cases</span>
       </div>
       <div class="section-head">
         <span class="eyebrow">How every answer is tested</span>
         <h2>Three layers of testing</h2>
       </div>
       <div class="card-grid three">
-        <div class="card"><h3>Real sources only</h3><p>The agent works from official Minnesota statutes and court rules and public case records: a 635-authority index. Nothing is written from memory.</p></div>
-        <div class="card"><h3>Live verification</h3><p>Every citation is re-fetched at verification time. A citation is good because it was just checked, not because it looks right.</p></div>
-        <div class="card"><h3>A gate, not a hope</h3><p>Every citation receives one of three verdicts: VERIFIED, NOT_RETRIEVABLE, or AMBIGUOUS, and only VERIFIED ships in a draft.</p></div>
+        <div class="card"><h3>Real sources only</h3><p>The index contains 630 distinct authorities: 30 statutes, 45 rules, and 555 cases in a 636-row corpus counted 2026-09-27.</p></div>
+        <div class="card"><h3>Live verification</h3><p>The standalone gate re-fetches a citation when it runs. The desk does not call it yet; ACC-01 wiring is in flight.</p></div>
+        <div class="card"><h3>A gate, not a hope</h3><p>The standalone gate returns VERIFIED, NOT_RETRIEVABLE, or AMBIGUOUS and blocks fabricated or overbroad citations in gate tests. No draft-path guarantee is published until ACC-01 lands.</p></div>
       </div>
     </div>
   </section>
@@ -71,7 +71,7 @@
         <p>The failure attorneys fear most is the invented citation: a case that doesn't exist, cited with total confidence. So we test exactly that.</p>
         <p>Our test set inserts fabricated cases and statutes into real requests. The agent must refuse them, flag them, and keep them out of the draft.</p>
         <ul class="tick">
-          <li>A fabricated case in the test set was returned <b>NOT_RETRIEVABLE</b> and excluded from the draft</li>
+          <li>On 2026-09-27, 5 of 5 fabricated citations were returned <b>NOT_RETRIEVABLE</b> by the standalone gate (corpus sha <code>1a3f4d22…</code>, 636 rows)</li>
           <li>A real Minnesota statute in the same test verified live</li>
           <li>Every drafting run in the suites ends with <b>SUBMIT: None</b>. Nothing self-submits</li>
         </ul>
@@ -125,7 +125,7 @@
           <li>When two real cases share the same citation page, the gate says <b>AMBIGUOUS</b> and asks you to choose the controlling one. It doesn't guess for you.</li>
           <li>When a question falls outside our index, it says <b>NOT_FOUND</b>. It does not invent an answer to look helpful.</li>
         </ul>
-        <p class="space-top"><b>What we do claim:</b> the most thoroughly verified AI for Minnesota legal work: the one that gives you confidence in the data and the workflow it provides, under your review.</p>
+        <p class="space-top"><b>What we do claim:</b> a Minnesota legal associate whose data and workflow you can check, under your review.</p>
       </div>
     </div>
   </section>
@@ -161,7 +161,8 @@
       </nav>
     </div>
     <div class="foot-legal">
-      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3 · The attorney reviews and approves every output. The attorney is the author.
+      Merit AI Solutions is not a law firm and does not provide legal advice. The AI Legal Associate is a support tool used under the supervision of a licensed attorney, who reviews and approves every output and remains the author. Using this site creates no attorney-client relationship.
+      Built for Minnesota Rules of Professional Conduct 1.1, 1.6, 3.3, and 5.3. The attorney reviews and approves every output. The attorney is the author.
       <span class="copy">© 2026 Merit AI Solutions · Minnesota</span>
     </div>
   </div>
