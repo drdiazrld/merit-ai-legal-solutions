@@ -299,6 +299,12 @@ tbody td:first-child{font-weight:600;color:var(--navy);white-space:nowrap;width:
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
 .site-foot .brand span{color:#fff;font-size:12.5px}
 .foot-tag{font-size:13.5px;color:#AAB2C6;max-width:46ch;margin-top:12px}
+.foot-contact{font-size:13.5px;margin-top:10px}
+.foot-contact a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(176,141,66,.42);padding-bottom:1px}
+.foot-contact a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.45)}
+.contact-line{font-size:13.5px;color:#C7CDDC;margin-top:14px}
+.contact-line a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(176,141,66,.42);padding-bottom:1px}
+.contact-line a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.45)}
 .foot-links{display:grid;grid-template-columns:1fr 1fr;gap:9px 24px;align-content:start}
 .foot-links a{color:#C7CDDC;font-size:13.5px}
 .foot-links a:hover{color:var(--gold-soft)}
