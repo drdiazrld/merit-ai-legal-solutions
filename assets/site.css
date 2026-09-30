@@ -305,6 +305,7 @@ tbody td:first-child{font-weight:600;color:var(--navy);white-space:nowrap;width:
 .contact-line{font-size:13.5px;color:#C7CDDC;margin-top:14px}
 .contact-line a{color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(176,141,66,.42);padding-bottom:1px}
 .contact-line a:hover{color:#fff;border-bottom-color:rgba(255,255,255,.45)}
+.foot-contact .sep,.contact-line .sep{margin:0 9px;color:#5f6779}
 .foot-links{display:grid;grid-template-columns:1fr 1fr;gap:9px 24px;align-content:start}
 .foot-links a{color:#C7CDDC;font-size:13.5px}
 .foot-links a:hover{color:var(--gold-soft)}
