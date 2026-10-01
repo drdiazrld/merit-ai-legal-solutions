@@ -28,6 +28,8 @@ def build():
 
         nav = nav_tpl
         stem = src.stem
+        canon = ("https://meritailegalsolutions.com/" if stem == "index"
+                 else f"https://meritailegalsolutions.com/{stem}.html")
         active_key = {"index": None, "capabilities": "CAP", "work-time": "WRK", "orchestration": "ORC",
                       "vs-general-ai": "GAI", "vs-legal-ai": "LAI", "proof": "PRO",
                       "testing": "TES", "systems": "SYS", "security": "SEC", "compliance": "COM", "pilot": "PIL"}.get(stem)
@@ -40,7 +42,8 @@ def build():
             nav = nav.replace(f'class="__NAV_ACTIVE_{key}__"', '')
         nav = nav.replace(' class=""', '')
 
-        page = head.replace("__TITLE__", title).replace("__DESC__", desc) + nav + body + footer + "\n</body>\n</html>\n"
+        page = (head.replace("__TITLE__", title).replace("__DESC__", desc)
+                    .replace("__CANON__", canon)) + nav + body + footer + "\n</body>\n</html>\n"
         out = OUT / (stem + ".html")
         out.write_text(page)
         print(f"built {out.name}  ({len(page):,} chars)")
