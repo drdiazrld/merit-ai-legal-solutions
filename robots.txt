@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://meriteducationgroup.com/merit-ai-legal-solutions/sitemap.xml
+
+Sitemap: https://meritailegalsolutions.com/sitemap.xml
