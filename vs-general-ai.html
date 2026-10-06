@@ -152,7 +152,7 @@
         <li class="cmd-item"><code>"Analyze the file /path/to/complaint.pdf"</code><span class="cmd-what">Extracts the allegations, classifies them, and logs the evidence in the matter.</span></li>
         <li class="cmd-item"><code>"What's due?"</code> or <code>"What's due in 14 days?"</code><span class="cmd-what">Deadlines: business days, Minnesota holidays, and the +3 mail rule, calculated from your matter's dates.</span></li>
         <li class="cmd-item"><code>"Add a task: file the response by 2026-09-01"</code> and <code>"Mark T1 done"</code><span class="cmd-what">Tasks in the matter record, tracked until you close them.</span></li>
-        <li class="cmd-item"><code>"Is 518.17 real?"</code><span class="cmd-what">A citation check against the 630-authority Minnesota and federal index; the standalone gate returns a verdict when it is run (desk wiring in flight under ACC-01).</span></li>
+        <li class="cmd-item"><code>"Is 518.17 real?"</code><span class="cmd-what">A citation check against the 635-authority Minnesota and federal index; the standalone gate returns a verdict when it is run (desk wiring in flight under ACC-01).</span></li>
       </ul>
 
       <div class="callout">
@@ -169,7 +169,7 @@
       <p class="lead">With a general-purpose chatbot, you are the project manager: you paste the context, restate the task, check the citations, and re-do it all next session. With the Associate, you are the reviewer. That's the whole difference.</p>
       <div class="flow-list">
         <div class="fbox"><span class="flow-num">1</span><div><h3>It pulls the matter itself</h3><p>Parties, facts, chronology, evidence, tasks: the living file in the Case Brain. You don't re-explain the case; you reference it.</p></div></div>
-        <div class="fbox"><span class="flow-num">2</span><div><h3>It routes the work to the right model tier</h3><p>Drafting, analysis, and deadline math route through the desk. A separate gate can check citations against the 630-authority index and return VERIFIED, NOT_RETRIEVABLE, or AMBIGUOUS, but the desk does not call that gate yet.</p></div></div>
+        <div class="fbox"><span class="flow-num">2</span><div><h3>It routes the work to the right model tier</h3><p>Drafting, analysis, and deadline math route through the desk. A separate gate can check citations against the 635-authority index and return VERIFIED, NOT_RETRIEVABLE, or AMBIGUOUS, but the desk does not call that gate yet.</p></div></div>
         <div class="fbox"><span class="flow-num">3</span><div><h3>It leaves the work honest</h3><p>Empty fields stay empty: no filler, no confident guessing. The draft comes back marked READY_FOR_ATTORNEY_REVIEW, and nothing leaves without you: SUBMIT is None until you approve.</p></div></div>
         <div class="fbox"><span class="flow-num">4</span><div><h3>The gate is separate today</h3><p>The verification and adversarial checks exist, but they are not yet wired into every desk brief. ACC-01 is in flight.</p></div></div>
       </div>
@@ -229,7 +229,7 @@
             <tr><th style="width:24%"></th><th>Merit AI Solutions</th><th>General-purpose AI chatbots</th></tr>
           </thead>
           <tbody>
-            <tr><td class="rowlabel">Built for</td><td>Minnesota practice: 630 distinct authorities = 30 statutes + 45 rules + 555 cases; 636-row corpus counted 2026-09-27</td><td>The open web: every topic, no jurisdiction</td></tr>
+            <tr><td class="rowlabel">Built for</td><td>Minnesota practice: 635 distinct authorities = 30 statutes + 45 rules + 560 cases; 636-row corpus counted 2026-09-27</td><td>The open web: every topic, no jurisdiction</td></tr>
             <tr><td class="rowlabel">Citations</td><td>Standalone gate tested separately; desk wiring is still in flight under ACC-01</td><td>Answered from memory; nothing is checked</td></tr>
             <tr><td class="rowlabel">When the gate can't verify</td><td>Standalone verdict is NOT_RETRIEVABLE or AMBIGUOUS; attorney review remains required</td><td>Typically keeps going, confidently</td></tr>
             <tr><td class="rowlabel">Drafting</td><td>Memos, demands, motions, complaints, answers, interrogatories, briefs</td><td>General prose, not litigation formats</td></tr>
