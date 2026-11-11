@@ -4,6 +4,7 @@ import asyncio
 import json
 import re
 import sys
+import subprocess
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
@@ -48,12 +49,12 @@ FORBIDDEN = {
     "b1_completion_claim": ["b1 is complete", "b1 complete"],
 }
 REJECTED_JARGON = {
-    "vm_abbreviation": re.compile(r"\bvm\b", re.I),
-    "fresh_seat": re.compile(r"fresh-seat", re.I),
-    "citation_gate": re.compile(r"citation-gate", re.I),
-    "seat_configuration": re.compile(r"seat configuration", re.I),
-    "semantic_reviewer": re.compile(r"semantic reviewer", re.I),
-    "restricted_runtime_controls": re.compile(r"restricted runtime controls", re.I),
+    "vm_abbreviation": re.compile(r"\b" + "".join(("v", "m")) + r"\b", re.I),
+    "fresh_seat": re.compile("".join(("fresh", "-seat")), re.I),
+    "citation_gate": re.compile("".join(("citation", "-gate")), re.I),
+    "seat_configuration": re.compile("".join(("seat ", "configuration")), re.I),
+    "semantic_reviewer": re.compile("".join(("semantic ", "reviewer")), re.I),
+    "restricted_runtime_controls": re.compile("".join(("restricted runtime ", "controls")), re.I),
 }
 
 
@@ -64,21 +65,31 @@ def canonical_url(route: str) -> str:
 def static_checks():
     errors = []
     html_files = sorted(ROOT.glob("*.html"))
+    tracked_files = [ROOT / name for name in subprocess.check_output(
+        ["git", "ls-files"], cwd=ROOT, text=True
+    ).splitlines()]
     scans = {}
     for group, terms in FORBIDDEN.items():
         hits = []
-        for path in html_files:
-            text = path.read_text(encoding="utf-8").casefold()
-            hits.extend({"file": path.name, "term": term} for term in terms if term in text)
+        scan_files = tracked_files if group == "visitor_facing_framework_token" else html_files
+        for path in scan_files:
+            try:
+                text = path.read_text(encoding="utf-8").casefold()
+            except UnicodeDecodeError:
+                continue
+            hits.extend({"file": str(path.relative_to(ROOT)), "term": term} for term in terms if term in text)
         scans[group] = hits
         if hits:
             errors.append(f"{group}: {hits}")
 
     jargon_hits = []
-    for path in html_files:
-        text = path.read_text(encoding="utf-8")
+    for path in tracked_files:
+        try:
+            text = path.read_text(encoding="utf-8")
+        except UnicodeDecodeError:
+            continue
         jargon_hits.extend(
-            {"file": path.name, "term": name}
+            {"file": str(path.relative_to(ROOT)), "term": name}
             for name, pattern in REJECTED_JARGON.items()
             if pattern.search(text)
         )
@@ -129,10 +140,25 @@ def static_checks():
     if len(EXISTING_PUBLIC) != 16 or missing_existing:
         errors.append(f"existing URL preservation failed: count={len(EXISTING_PUBLIC)} missing={missing_existing}")
 
-    required = ["CNAME", "google29ad838b30fb55e1.html", "sitemap.xml", "robots.txt", "build_site.py"]
+    required = ["CNAME", "google29ad838b30fb55e1.html", "sitemap.xml", "robots.txt", "build_site.py", "assets/img/merit-crest.svg"]
     missing_required = [name for name in required if not (ROOT / name).is_file()]
     if missing_required:
         errors.append(f"required files missing: {missing_required}")
+
+    if (ROOT / "favicon.ico").exists():
+        errors.append("obsolete favicon.ico remains")
+
+    logo_results = {}
+    for route in CANONICAL:
+        text = (ROOT / route).read_text(encoding="utf-8")
+        result = {
+            "favicon": "<link rel='icon' href='assets/img/merit-crest.svg' type='image/svg+xml'>" in text,
+            "header": "class='brand-crest'" in text,
+            "footer": "class='footer-crest'" in text,
+        }
+        logo_results[route] = result
+        if not all(result.values()):
+            errors.append(f"crest placement incomplete: {route}: {result}")
 
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     sitemap_urls = re.findall(r"<loc>(.*?)</loc>", sitemap)
@@ -150,6 +176,7 @@ def static_checks():
         "existing_public_url_count": len(EXISTING_PUBLIC),
         "missing_existing_urls": missing_existing,
         "missing_required_files": missing_required,
+        "logo_placements": logo_results,
         "sitemap_urls": sitemap_urls,
     }
 
@@ -176,7 +203,14 @@ async def browser_checks():
                     clipped: [...document.querySelectorAll('main *')].filter(e => {
                       const s=getComputedStyle(e), r=e.getBoundingClientRect();
                       return e.children.length===0 && e.textContent.trim() && (r.width===0 || r.height===0 || e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1) && !['visible','clip'].includes(s.overflow);
-                    }).length
+                    }).length,
+                    logoCount: document.querySelectorAll("img[src='assets/img/merit-crest.svg']").length,
+                    logoProblems: [...document.querySelectorAll("img[src='assets/img/merit-crest.svg']")].filter(e => {
+                      const r=e.getBoundingClientRect();
+                      return !e.complete || e.naturalWidth !== 260 || e.naturalHeight !== 254 || r.width <= 0 || r.height <= 0 || Math.abs((r.width/r.height)-(260/254)) > .03 || r.left < 0 || r.right > innerWidth;
+                    }).length,
+                    headerOverflow: (() => { const e=document.querySelector('.site-header'); return e.scrollWidth-e.clientWidth; })(),
+                    menuUsable: (() => { const e=document.querySelector('.menu-toggle'), r=e.getBoundingClientRect(); return getComputedStyle(e).display === 'none' || (r.width >= 44 && r.height >= 44 && r.right <= innerWidth); })()
                 })""")
                 item = {
                     "status": response.status if response else None,
@@ -185,7 +219,7 @@ async def browser_checks():
                     **metrics,
                 }
                 route_result[str(width)] = item
-                if item["status"] != 200 or console_errors or request_failures or metrics["documentOverflow"] > 0 or metrics["bodyOverflow"] > 0 or metrics["clipped"] > 0:
+                if item["status"] != 200 or console_errors or request_failures or metrics["documentOverflow"] > 0 or metrics["bodyOverflow"] > 0 or metrics["clipped"] > 0 or metrics["logoCount"] != 2 or metrics["logoProblems"] > 0 or metrics["headerOverflow"] > 0 or not metrics["menuUsable"]:
                     errors.append({"route": route, "width": width, **item})
                 await context.close()
             results[route] = route_result
