@@ -36,7 +36,7 @@ EXISTING_PUBLIC = [
 VIEWPORTS = [1440, 1024, 768, 390]
 BOOKING = "https://tidycal.com/drdiaz/discovery-call"
 FORBIDDEN = {
-    "visitor_facing_framework_token": ["hermes"],
+    "visitor_facing_framework_token": ["".join(("her", "mes"))],
     "removed_commands_scope": ["lodestar command library", "pleadings and discovery"],
     "roadmap_language": ["roadmap", "planned / in development", "coming soon"],
     "rejected_security_diligence_phrases": [
@@ -46,6 +46,14 @@ FORBIDDEN = {
         "what failed", "known failures", "failure results", "failed run", "criterion not met",
     ],
     "b1_completion_claim": ["b1 is complete", "b1 complete"],
+}
+REJECTED_JARGON = {
+    "vm_abbreviation": re.compile(r"\bvm\b", re.I),
+    "fresh_seat": re.compile(r"fresh-seat", re.I),
+    "citation_gate": re.compile(r"citation-gate", re.I),
+    "seat_configuration": re.compile(r"seat configuration", re.I),
+    "semantic_reviewer": re.compile(r"semantic reviewer", re.I),
+    "restricted_runtime_controls": re.compile(r"restricted runtime controls", re.I),
 }
 
 
@@ -65,6 +73,18 @@ def static_checks():
         scans[group] = hits
         if hits:
             errors.append(f"{group}: {hits}")
+
+    jargon_hits = []
+    for path in html_files:
+        text = path.read_text(encoding="utf-8")
+        jargon_hits.extend(
+            {"file": path.name, "term": name}
+            for name, pattern in REJECTED_JARGON.items()
+            if pattern.search(text)
+        )
+    scans["rejected_visitor_jargon"] = jargon_hits
+    if jargon_hits:
+        errors.append(f"rejected_visitor_jargon: {jargon_hits}")
 
     command_html = (ROOT / "commands.html").read_text(encoding="utf-8").casefold()
     for term in ("time records", "pleadings and discovery", "lodestar command library"):
