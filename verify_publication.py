@@ -37,9 +37,9 @@ EXISTING_PUBLIC = [
 ]
 VIEWPORTS = [1440, 1024, 768, 390]
 BOOKING = "https://tidycal.com/drdiaz/discovery-call"
-VIDEO = ROOT / "assets/media/merit-ai-solutions-concept-preview-v9.mp4"
+VIDEO = ROOT / "assets/media/merit-ai-solutions-concept-preview-v9-public.mp4"
 POSTER = ROOT / "assets/media/merit-ai-solutions-concept-preview-poster.jpg"
-VIDEO_SHA256 = "eea2b3f4f0055d571707b7a826839292717edb94879b920af2841bd54744d12f"
+VIDEO_SHA256 = "2a63818e06d4bd895b2dcaefc3d1c95d38b350fad15467d52307d19efac9d4ac"
 FORBIDDEN = {
     "visitor_facing_framework_token": ["".join(("her", "mes"))],
     "removed_commands_scope": ["lodestar command library", "pleadings and discovery"],
@@ -51,6 +51,7 @@ FORBIDDEN = {
         "what failed", "known failures", "failure results", "failed run", "criterion not met",
     ],
     "b1_completion_claim": ["b1 is complete", "b1 complete"],
+    "superseded_film_governance": ["owner-directed"],
 }
 REJECTED_JARGON = {
     "vm_abbreviation": re.compile(r"\b" + "".join(("v", "m")) + r"\b", re.I),
@@ -77,6 +78,8 @@ def static_checks():
         hits = []
         scan_files = tracked_files if group == "visitor_facing_framework_token" else html_files
         for path in scan_files:
+            if not path.is_file():
+                continue
             try:
                 text = path.read_text(encoding="utf-8").casefold()
             except UnicodeDecodeError:
@@ -88,6 +91,8 @@ def static_checks():
 
     jargon_hits = []
     for path in tracked_files:
+        if not path.is_file():
+            continue
         try:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
@@ -172,6 +177,7 @@ def static_checks():
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     required_home_phrases = [
         "Concept preview",
+        "This concept film depicts illustrative workflows pending current Lodestar verification",
         "illustrative workflows pending current Lodestar verification",
         "Every draft requires attorney review",
         "Nothing is sent, filed, served, or calendared automatically",
@@ -255,7 +261,7 @@ async def browser_checks():
                     menuUsable: (() => { const e=document.querySelector('.menu-toggle'), r=e.getBoundingClientRect(); return getComputedStyle(e).display === 'none' || (r.width >= 44 && r.height >= 44 && r.right <= innerWidth); })(),
                     video: (() => { const e=document.querySelector('video'); if (!e) return null; const r=e.getBoundingClientRect(); return {controls:e.controls,autoplay:e.autoplay,playsInline:e.playsInline,preload:e.preload,poster:e.getAttribute('poster'),source:e.querySelector('source')?.getAttribute('src'),readyState:e.readyState,duration:e.duration,width:r.width,height:r.height}; })()
                 })""")
-                meaningful_failures = [failure for failure in request_failures if not ("merit-ai-solutions-concept-preview-v9.mp4" in failure and "ERR_ABORTED" in failure)]
+                meaningful_failures = [failure for failure in request_failures if not ("merit-ai-solutions-concept-preview-v9-public.mp4" in failure and "ERR_ABORTED" in failure)]
                 item = {
                     "status": response.status if response else None,
                     "console_errors": console_errors,
@@ -273,6 +279,19 @@ async def browser_checks():
                         shot = ROOT / "screenshots" / f"homepage-{width}.png"
                         shot.parent.mkdir(exist_ok=True)
                         await page.screenshot(path=str(shot), full_page=True)
+                    if width == 1440:
+                        playback = await page.evaluate("""async () => {
+                          const e=document.querySelector('video');
+                          e.muted=true; e.currentTime=0;
+                          await e.play();
+                          await new Promise(resolve => setTimeout(resolve, 500));
+                          const result={paused:e.paused,currentTime:e.currentTime,readyState:e.readyState};
+                          e.pause();
+                          return result;
+                        }""")
+                        item["playback"] = playback
+                        if playback["paused"] or playback["currentTime"] <= 0.3 or playback["readyState"] < 2:
+                            errors.append({"route": route, "width": width, "video_playback_error": playback})
                 await context.close()
             results[route] = route_result
 

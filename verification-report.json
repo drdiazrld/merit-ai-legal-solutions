@@ -9,6 +9,7 @@
       "rejected_security_diligence_phrases": [],
       "public_failure_outcomes": [],
       "b1_completion_claim": [],
+      "superseded_film_governance": [],
       "rejected_visitor_jargon": []
     },
     "booking_links": 26,
@@ -107,9 +108,9 @@
     "missing_existing_urls": [],
     "missing_required_files": [],
     "video": {
-      "path": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+      "path": "assets/media/merit-ai-solutions-concept-preview-v9-public.mp4",
       "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
-      "sha256": "eea2b3f4f0055d571707b7a826839292717edb94879b920af2841bd54744d12f",
+      "sha256": "2a63818e06d4bd895b2dcaefc3d1c95d38b350fad15467d52307d19efac9d4ac",
       "duration": 99.8,
       "width": 1920,
       "height": 1080,
@@ -206,11 +207,16 @@
             "playsInline": true,
             "preload": "metadata",
             "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
-            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9-public.mp4",
             "readyState": 4,
             "duration": 99.8,
             "width": 1353.625,
             "height": 761.40625
+          },
+          "playback": {
+            "paused": false,
+            "currentTime": 0.460049,
+            "readyState": 4
           }
         },
         "1024": {
@@ -230,7 +236,7 @@
             "playsInline": true,
             "preload": "metadata",
             "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
-            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9-public.mp4",
             "readyState": 4,
             "duration": 99.8,
             "width": 962.5625,
@@ -254,7 +260,7 @@
             "playsInline": true,
             "preload": "metadata",
             "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
-            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9-public.mp4",
             "readyState": 4,
             "duration": 99.8,
             "width": 721.9375,
@@ -278,7 +284,7 @@
             "playsInline": true,
             "preload": "metadata",
             "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
-            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9-public.mp4",
             "readyState": 4,
             "duration": 99.8,
             "width": 358,
