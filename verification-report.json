@@ -1,0 +1,724 @@
+{
+  "status": "PASS",
+  "static": {
+    "errors": [],
+    "forbidden_scans": {
+      "visitor_facing_framework_token": [],
+      "removed_commands_scope": [],
+      "roadmap_language": [],
+      "rejected_security_diligence_phrases": [],
+      "public_failure_outcomes": [],
+      "b1_completion_claim": [],
+      "rejected_visitor_jargon": []
+    },
+    "booking_links": 26,
+    "wrong_booking_links": [],
+    "canonical_routes": {
+      "index.html": {
+        "expected": "https://meritailegalsolutions.com/",
+        "ok": true
+      },
+      "capabilities.html": {
+        "expected": "https://meritailegalsolutions.com/capabilities.html",
+        "ok": true
+      },
+      "commands.html": {
+        "expected": "https://meritailegalsolutions.com/commands.html",
+        "ok": true
+      },
+      "pilot-demo.html": {
+        "expected": "https://meritailegalsolutions.com/pilot-demo.html",
+        "ok": true
+      },
+      "testing.html": {
+        "expected": "https://meritailegalsolutions.com/testing.html",
+        "ok": true
+      },
+      "security.html": {
+        "expected": "https://meritailegalsolutions.com/security.html",
+        "ok": true
+      },
+      "responsibility.html": {
+        "expected": "https://meritailegalsolutions.com/responsibility.html",
+        "ok": true
+      },
+      "pilot.html": {
+        "expected": "https://meritailegalsolutions.com/pilot.html",
+        "ok": true
+      },
+      "about.html": {
+        "expected": "https://meritailegalsolutions.com/about.html",
+        "ok": true
+      }
+    },
+    "redirects": {
+      "ai-legal-associate-minnesota.html": {
+        "target": "index.html",
+        "canonical": "https://meritailegalsolutions.com/",
+        "ok": true
+      },
+      "hire-a-paralegal-minnesota.html": {
+        "target": "capabilities.html",
+        "canonical": "https://meritailegalsolutions.com/capabilities.html",
+        "ok": true
+      },
+      "virtual-paralegal-minnesota.html": {
+        "target": "capabilities.html",
+        "canonical": "https://meritailegalsolutions.com/capabilities.html",
+        "ok": true
+      },
+      "compliance.html": {
+        "target": "responsibility.html",
+        "canonical": "https://meritailegalsolutions.com/responsibility.html",
+        "ok": true
+      },
+      "orchestration.html": {
+        "target": "commands.html",
+        "canonical": "https://meritailegalsolutions.com/commands.html",
+        "ok": true
+      },
+      "proof.html": {
+        "target": "testing.html",
+        "canonical": "https://meritailegalsolutions.com/testing.html",
+        "ok": true
+      },
+      "systems.html": {
+        "target": "security.html",
+        "canonical": "https://meritailegalsolutions.com/security.html",
+        "ok": true
+      },
+      "vs-general-ai.html": {
+        "target": "capabilities.html",
+        "canonical": "https://meritailegalsolutions.com/capabilities.html",
+        "ok": true
+      },
+      "vs-legal-ai.html": {
+        "target": "capabilities.html",
+        "canonical": "https://meritailegalsolutions.com/capabilities.html",
+        "ok": true
+      },
+      "work-time.html": {
+        "target": "capabilities.html",
+        "canonical": "https://meritailegalsolutions.com/capabilities.html",
+        "ok": true
+      }
+    },
+    "existing_public_url_count": 16,
+    "missing_existing_urls": [],
+    "missing_required_files": [],
+    "video": {
+      "path": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+      "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
+      "sha256": "eea2b3f4f0055d571707b7a826839292717edb94879b920af2841bd54744d12f",
+      "duration": 99.8,
+      "width": 1920,
+      "height": 1080,
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "codec_name": "aac"
+        }
+      ]
+    },
+    "homepage_status_missing": [],
+    "humanization_hits": [],
+    "logo_placements": {
+      "index.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "capabilities.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "commands.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "pilot-demo.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "testing.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "security.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "responsibility.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "pilot.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      },
+      "about.html": {
+        "favicon": true,
+        "header": true,
+        "footer": true
+      }
+    },
+    "sitemap_urls": [
+      "https://meritailegalsolutions.com/",
+      "https://meritailegalsolutions.com/capabilities.html",
+      "https://meritailegalsolutions.com/commands.html",
+      "https://meritailegalsolutions.com/pilot-demo.html",
+      "https://meritailegalsolutions.com/testing.html",
+      "https://meritailegalsolutions.com/security.html",
+      "https://meritailegalsolutions.com/responsibility.html",
+      "https://meritailegalsolutions.com/pilot.html",
+      "https://meritailegalsolutions.com/about.html"
+    ]
+  },
+  "browser": {
+    "errors": [],
+    "routes": {
+      "index.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": {
+            "controls": true,
+            "autoplay": false,
+            "playsInline": true,
+            "preload": "metadata",
+            "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "readyState": 4,
+            "duration": 99.8,
+            "width": 1353.625,
+            "height": 761.40625
+          }
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": {
+            "controls": true,
+            "autoplay": false,
+            "playsInline": true,
+            "preload": "metadata",
+            "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "readyState": 4,
+            "duration": 99.8,
+            "width": 962.5625,
+            "height": 541.4375
+          }
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": {
+            "controls": true,
+            "autoplay": false,
+            "playsInline": true,
+            "preload": "metadata",
+            "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "readyState": 4,
+            "duration": 99.8,
+            "width": 721.9375,
+            "height": 406.078125
+          }
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": {
+            "controls": true,
+            "autoplay": false,
+            "playsInline": true,
+            "preload": "metadata",
+            "poster": "assets/media/merit-ai-solutions-concept-preview-poster.jpg",
+            "source": "assets/media/merit-ai-solutions-concept-preview-v9.mp4",
+            "readyState": 4,
+            "duration": 99.8,
+            "width": 358,
+            "height": 201.375
+          }
+        }
+      },
+      "capabilities.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "commands.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "pilot-demo.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "testing.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "security.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "responsibility.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "pilot.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      },
+      "about.html": {
+        "1440": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "1024": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "768": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        },
+        "390": {
+          "status": 200,
+          "console_errors": [],
+          "request_failures": [],
+          "documentOverflow": 0,
+          "bodyOverflow": 0,
+          "clipped": 0,
+          "logoCount": 2,
+          "logoProblems": 0,
+          "headerOverflow": 0,
+          "menuUsable": true,
+          "video": null
+        }
+      }
+    },
+    "broken_local_refs": []
+  }
+}

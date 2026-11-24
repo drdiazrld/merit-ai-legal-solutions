@@ -2,6 +2,7 @@
 """Verify the static GitHub Pages publication candidate."""
 import asyncio
 import json
+import os
 import re
 import sys
 import subprocess
@@ -36,6 +37,9 @@ EXISTING_PUBLIC = [
 ]
 VIEWPORTS = [1440, 1024, 768, 390]
 BOOKING = "https://tidycal.com/drdiaz/discovery-call"
+VIDEO = ROOT / "assets/media/merit-ai-solutions-concept-preview-v9.mp4"
+POSTER = ROOT / "assets/media/merit-ai-solutions-concept-preview-poster.jpg"
+VIDEO_SHA256 = "eea2b3f4f0055d571707b7a826839292717edb94879b920af2841bd54744d12f"
 FORBIDDEN = {
     "visitor_facing_framework_token": ["".join(("her", "mes"))],
     "removed_commands_scope": ["lodestar command library", "pleadings and discovery"],
@@ -148,6 +152,40 @@ def static_checks():
     if (ROOT / "favicon.ico").exists():
         errors.append("obsolete favicon.ico remains")
 
+    video_result: dict[str, object] = {"path": str(VIDEO.relative_to(ROOT)), "poster": str(POSTER.relative_to(ROOT))}
+    if not VIDEO.is_file() or not POSTER.is_file():
+        errors.append("homepage concept video or poster is missing")
+    else:
+        import hashlib
+        digest = hashlib.sha256(VIDEO.read_bytes()).hexdigest()
+        probe = json.loads(subprocess.check_output([
+            "ffprobe", "-v", "error", "-show_entries",
+            "format=duration:stream=codec_name,width,height", "-of", "json", str(VIDEO)
+        ], text=True))
+        streams = probe.get("streams", [])
+        visual = next((stream for stream in streams if stream.get("width") and stream.get("height")), {})
+        duration = float(probe.get("format", {}).get("duration", 0))
+        video_result.update({"sha256": digest, "duration": duration, "width": visual.get("width"), "height": visual.get("height"), "streams": streams})
+        if digest != VIDEO_SHA256 or visual.get("width") != 1920 or visual.get("height") != 1080 or abs(duration - 99.8) > .05:
+            errors.append(f"video identity or metadata mismatch: {video_result}")
+
+    home = (ROOT / "index.html").read_text(encoding="utf-8")
+    required_home_phrases = [
+        "Concept preview",
+        "illustrative workflows pending current Lodestar verification",
+        "Every draft requires attorney review",
+        "Nothing is sent, filed, served, or calendared automatically",
+    ]
+    missing_home_phrases = [phrase for phrase in required_home_phrases if phrase not in home]
+    if missing_home_phrases:
+        errors.append(f"homepage concept status incomplete: {missing_home_phrases}")
+    if "<video controls playsinline preload='metadata'" not in home or " autoplay" in home.casefold():
+        errors.append("homepage video controls, inline playback, preload, or autoplay boundary is incorrect")
+    visitor_html = "\n".join(path.read_text(encoding="utf-8") for path in html_files)
+    humanization_hits = [token for token in ("—", " --- ", " -- ") if token in visitor_html]
+    if humanization_hits:
+        errors.append(f"visitor-facing humanization scan: {humanization_hits}")
+
     logo_results = {}
     for route in CANONICAL:
         text = (ROOT / route).read_text(encoding="utf-8")
@@ -176,6 +214,9 @@ def static_checks():
         "existing_public_url_count": len(EXISTING_PUBLIC),
         "missing_existing_urls": missing_existing,
         "missing_required_files": missing_required,
+        "video": video_result,
+        "homepage_status_missing": missing_home_phrases,
+        "humanization_hits": humanization_hits,
         "logo_placements": logo_results,
         "sitemap_urls": sitemap_urls,
     }
@@ -191,6 +232,7 @@ async def browser_checks():
             for width in VIEWPORTS:
                 context = await browser.new_context(viewport={"width": width, "height": 900})
                 page = await context.new_page()
+                await page.emulate_media(reduced_motion="reduce")
                 console_errors = []
                 request_failures = []
                 page.on("console", lambda msg, bucket=console_errors: bucket.append(msg.text) if msg.type == "error" else None)
@@ -202,7 +244,7 @@ async def browser_checks():
                     bodyOverflow: document.body.scrollWidth - document.body.clientWidth,
                     clipped: [...document.querySelectorAll('main *')].filter(e => {
                       const s=getComputedStyle(e), r=e.getBoundingClientRect();
-                      return e.children.length===0 && e.textContent.trim() && (r.width===0 || r.height===0 || e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1) && !['visible','clip'].includes(s.overflow);
+                      return !e.closest('video') && e.children.length===0 && e.textContent.trim() && (r.width===0 || r.height===0 || e.scrollWidth>e.clientWidth+1 || e.scrollHeight>e.clientHeight+1) && !['visible','clip'].includes(s.overflow);
                     }).length,
                     logoCount: document.querySelectorAll("img[src='assets/img/merit-crest.svg']").length,
                     logoProblems: [...document.querySelectorAll("img[src='assets/img/merit-crest.svg']")].filter(e => {
@@ -210,17 +252,27 @@ async def browser_checks():
                       return !e.complete || e.naturalWidth !== 260 || e.naturalHeight !== 254 || r.width <= 0 || r.height <= 0 || Math.abs((r.width/r.height)-(260/254)) > .03 || r.left < 0 || r.right > innerWidth;
                     }).length,
                     headerOverflow: (() => { const e=document.querySelector('.site-header'); return e.scrollWidth-e.clientWidth; })(),
-                    menuUsable: (() => { const e=document.querySelector('.menu-toggle'), r=e.getBoundingClientRect(); return getComputedStyle(e).display === 'none' || (r.width >= 44 && r.height >= 44 && r.right <= innerWidth); })()
+                    menuUsable: (() => { const e=document.querySelector('.menu-toggle'), r=e.getBoundingClientRect(); return getComputedStyle(e).display === 'none' || (r.width >= 44 && r.height >= 44 && r.right <= innerWidth); })(),
+                    video: (() => { const e=document.querySelector('video'); if (!e) return null; const r=e.getBoundingClientRect(); return {controls:e.controls,autoplay:e.autoplay,playsInline:e.playsInline,preload:e.preload,poster:e.getAttribute('poster'),source:e.querySelector('source')?.getAttribute('src'),readyState:e.readyState,duration:e.duration,width:r.width,height:r.height}; })()
                 })""")
+                meaningful_failures = [failure for failure in request_failures if not ("merit-ai-solutions-concept-preview-v9.mp4" in failure and "ERR_ABORTED" in failure)]
                 item = {
                     "status": response.status if response else None,
                     "console_errors": console_errors,
-                    "request_failures": request_failures,
+                    "request_failures": meaningful_failures,
                     **metrics,
                 }
                 route_result[str(width)] = item
-                if item["status"] != 200 or console_errors or request_failures or metrics["documentOverflow"] > 0 or metrics["bodyOverflow"] > 0 or metrics["clipped"] > 0 or metrics["logoCount"] != 2 or metrics["logoProblems"] > 0 or metrics["headerOverflow"] > 0 or not metrics["menuUsable"]:
+                if item["status"] != 200 or console_errors or meaningful_failures or metrics["documentOverflow"] > 0 or metrics["bodyOverflow"] > 0 or metrics["clipped"] > 0 or metrics["logoCount"] != 2 or metrics["logoProblems"] > 0 or metrics["headerOverflow"] > 0 or not metrics["menuUsable"]:
                     errors.append({"route": route, "width": width, **item})
+                if route == "index.html":
+                    video = metrics["video"] or {}
+                    if not video.get("controls") or video.get("autoplay") or not video.get("playsInline") or video.get("preload") != "metadata" or video.get("readyState", 0) < 1 or abs(video.get("duration", 0) - 99.8) > .05 or video.get("width", 0) <= 0 or video.get("height", 0) <= 0:
+                        errors.append({"route": route, "width": width, "video_error": video})
+                    if width in (1440, 390) and os.environ.get("CAPTURE_SCREENSHOTS") == "1":
+                        shot = ROOT / "screenshots" / f"homepage-{width}.png"
+                        shot.parent.mkdir(exist_ok=True)
+                        await page.screenshot(path=str(shot), full_page=True)
                 await context.close()
             results[route] = route_result
 

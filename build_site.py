@@ -50,6 +50,23 @@ SECURITY_VISUAL = """<figure class='data-flow-visual' aria-labelledby='data-flow
   <figcaption id='data-flow-caption'>The original file and selected text follow different paths. Only selected text and the current title and document-type fields may be sent for model processing.</figcaption>
 </figure>"""
 
+HOME_FILM = """<section class='film-feature' aria-labelledby='film-title'>
+  <div class='film-status'>
+    <div>
+      <h2 id='film-title'>Concept preview</h2>
+      <p>This owner-directed film depicts illustrative workflows pending current Lodestar verification. Every draft requires attorney review. Nothing is sent, filed, served, or calendared automatically.</p>
+    </div>
+    <span aria-hidden='true'>1:40</span>
+  </div>
+  <figure class='film-frame'>
+    <video controls playsinline preload='metadata' poster='assets/media/merit-ai-solutions-concept-preview-poster.jpg' aria-label='Play the 1 minute 40 second Merit AI Solutions concept preview. The poster shows a quiet office desk at dusk.' aria-describedby='film-caption'>
+      <source src='assets/media/merit-ai-solutions-concept-preview-v9.mp4' type='video/mp4'>
+      Your browser does not support embedded video. <a href='assets/media/merit-ai-solutions-concept-preview-v9.mp4'>Open the concept preview video</a>.
+    </video>
+    <figcaption id='film-caption'>A concept film about AI-assisted preparation and attorney review. The film is illustrative, not current product verification.</figcaption>
+  </figure>
+</section>"""
+
 pages = {
 "index.html": {
 "title":"Merit AI Solutions | AI-assisted matter preparation for Minnesota attorneys",
@@ -182,7 +199,7 @@ def render(filename, p):
     return f"""<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>{escape(p['title'])}</title><meta name='description' content='{escape(p['desc'], quote=True)}'><link rel='canonical' href='{canonical}'><link rel='icon' href='assets/img/merit-crest.svg' type='image/svg+xml'><link rel='stylesheet' href='assets/site.css'><script>document.documentElement.classList.add('js')</script></head><body id='top' class='{page_class}'>
 <a class='skip-link' href='#main'>Skip to content</a>
 <header class='site-header'><a class='brand' href='index.html' aria-label='Merit AI Solutions home'><img class='brand-crest' src='assets/img/merit-crest.svg' alt='' width='260' height='254'><span class='brand-wordmark'><span>Merit</span><small>AI Solutions</small></span></a><button class='menu-toggle' type='button' aria-expanded='false' aria-controls='site-nav'>Menu</button><nav id='site-nav' class='site-nav' aria-label='Primary'>{nav_html(filename)}<a class='nav-cta' href='https://tidycal.com/drdiaz/discovery-call'>Book a call</a></nav></header>
-<main id='main'><header class='hero'><div class='hero-copy'><h1>{escape(p['h1'])}</h1><p class='hero-lead'>{escape(p['lead'])}</p><div class='hero-actions'><a class='button button-gold' href='https://tidycal.com/drdiaz/discovery-call'>Book a 30-minute discovery call</a><a class='text-link' href='capabilities.html'>See the work and limits</a></div></div><div class='hero-mark' aria-hidden='true'><span>{escape(p['mark'])}</span><b>Attorney review required</b></div></header>{review_strip}{sections}</main>
+<main id='main'><header class='hero'><div class='hero-copy'><h1>{escape(p['h1'])}</h1><p class='hero-lead'>{escape(p['lead'])}</p><div class='hero-actions'><a class='button button-gold' href='https://tidycal.com/drdiaz/discovery-call'>Book a 30-minute discovery call</a><a class='text-link' href='capabilities.html'>See the work and limits</a></div></div><div class='hero-mark' aria-hidden='true'><span>{escape(p['mark'])}</span><b>Attorney review required</b></div></header>{HOME_FILM if filename == 'index.html' else ''}{review_strip}{sections}</main>
 <footer class='site-footer'><div class='footer-name'>Merit</div><div class='footer-grid'><div><div class='footer-brand'><img class='footer-crest' src='assets/img/merit-crest.svg' alt='' width='260' height='254'><h2>Merit AI Solutions</h2></div><p>AI-assisted matter preparation for Minnesota solo attorneys and firms with 2–6 attorneys.</p></div><nav aria-label='Footer'>{nav_html(filename)}</nav><div><p>Merit is not a law firm and does not provide legal advice. Attorneys review every output and manually file, send, serve, or submit final work.</p><p>Use of this website does not create an attorney-client relationship.</p></div></div><p class='copyright'>© Merit AI Solutions.</p></footer><script src='assets/site.js' defer></script></body></html>"""
 
 (ROOT/'assets').mkdir(parents=True, exist_ok=True)
